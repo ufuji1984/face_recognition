@@ -19,6 +19,8 @@ known_faces = [
 
 # results is an array of True/False telling if the unknown face matched anyone in the known_faces array
 results = face_recognition.compare_faces(known_faces, unknown_face_encoding)
+# 中身を見ると、距離を測って、tolerance=0.6 に収まるかどうかで見ている。
+# これなら教師複数枚でも自由に判定ロジック書けそう。
 
 print("Is the unknown face a picture of Biden? {}".format(results[0]))
 print("Is the unknown face a picture of Obama? {}".format(results[1]))
